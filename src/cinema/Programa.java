@@ -67,6 +67,7 @@ public class Programa {
 				case 1:
 					System.out.println("qual numero do assento deseja reservar: ");
 					Integer numeroAc = sc.nextInt();
+					sc.nextLine();
 					System.out.println("qual horario da sessão: ");
 					String horarioSe = sc.nextLine();
 					Sessao sessaoEscolhida = cinema.escolherSessao(horarioSe);
@@ -77,6 +78,7 @@ public class Programa {
 				case 2:
 					System.out.println("qual numero do assento deseja reservar: ");
 					numeroAc = sc.nextInt();
+					sc.nextLine();
 					System.out.println("qual horario da sessão: ");
 					horarioSe = sc.nextLine();
 					sessaoEscolhida = cinema.escolherSessao(horarioSe);
@@ -95,9 +97,11 @@ public class Programa {
 				break;
 			case 5:
 				System.out.println("qual horario da sessao: ");
-				System.out.println("qual horario da sessão: ");
 				String horarioSe = sc.nextLine();
 				Sessao sessaoEscolhida = cinema.escolherSessao(horarioSe);
+				if(sessaoEscolhida == null) {
+					System.out.println("essa seçao não existe");
+				}
 				sessaoEscolhida.assentosOcupados();
 				break;
 			case 6:
